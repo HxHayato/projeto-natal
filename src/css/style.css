@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Poppins', sans-serif;
+    transition: all .40s ease;
+}
+
+:root {
+    --tam-h1: 3rem;
+    --destaque: #161212;
+    --p-color: #404040;
+    --botao-icon: #DA2535;
+    --bg-color: #F7C7B9;
+    --menu-mobile: #f7c7b9bf;
+    --bg2-color: #F9F9F9;
+    --desc-prod-color: #8D8D8D;
+}
+
+body {
+    max-width: 1580px;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--bg-color);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-item::after {
+    background-color: var(--botao-icon);
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    transition: all .50s ease;
+}
+
+.nav-item:hover::after {
+    bottom: -8px;
+    opacity: 1;
+}
+
+.nav-item a{
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--destaque);
+}
+
+.mobile {
+    background: transparent;
+    display: none;
+}
+
+.menu-mobile {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menu-mobile:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-mobile {
+    background-color: var(--menu-mobile);
+    padding: 20px 10%;
+    width: 100%;
+    display: none;
+}
+
+.navbar-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item-mobile a {
+    color: var(--destaque);
+    transition: all .15s ease;
+}
+
+.nav-item-mobile:hover a{
+    color: var(--botao-icon);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    padding: 0 8% 20px;
+    background-color: var(--bg-color);
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.texto-banner {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 17px;
+}
+
+.texto-banner h1 {
+    color: var(--destaque);
+    min-width: 100px;
+    max-width: 70%;
+    font-weight: 600;
+    font-size: var(--tam-h1);
+    line-height: 52px;
+}
+
+.texto-banner p {
+    margin-bottom: 15px;
+    width: 100%;
+    color: var(--p-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.btn-doacao {
+    background-color: var(--botao-icon);
+    color: var(--bg2-color);
+    width: 250px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.btn-doacao:hover {
+    background-color: #6d0009;
+}
+
+.btn-doacao i {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.banner img {
+    max-width: 50%;
+    height: 360px;
+    object-fit: contain;
+}
+
+.container-acessorios {
+    padding: 30px 8%;
+    background-color: var(--bg2-color);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.texto-acessorios {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.texto-acessorios h1{
+    font-weight: 600;
+    font-size: var(--tam-h1);
+}
+
+.texto-acessorios p{
+    color: var(--p-color);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.container-itens {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    align-items: center;
+}
+
+.itens {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+} 
+
+.itens img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+}
+
+.itens h2 {
+    color: var(--destaque);
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.itens p {
+    color: var(--desc-prod-color);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.doacoes {
+    padding: 30px 8%;
+    background-color: var(--bg-color);
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doacoes .imagem-doacoes {
+    max-width: 50%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.conteudo-doacoes {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.conteudo-doacoes h1 {
+    width: 100%;
+    color: var(--destaque);
+    font-weight: 600;
+    font-size: var(--tam-h1);
+    line-height: 52px;
+}
+
+.conteudo-doacoes p {
+    margin-bottom: 10px;
+    color: var(--p-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.conteudo-doacoes botao {
+    width: 210px;
+}
+
+footer {
+    padding: 20px 8%;
+    background: var(--bg2-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.footer-li a {
+    background: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    color: var(--botao-icon);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-li:hover a {
+    transform: scale(1.1);
+    background-color: #6d0009;
+    color: var(--bg2-color);
+}
+
+.footer-li i {
+    transition: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media Screen and (max-width: 1100px) {
+    :root{
+        -tam-h1: 2.75rem;
+    }
+    
+    header, footer {
+        padding: 25px 5%;
+    }
+
+    .navbar ul {
+        gap: 30px;
+    }
+
+    .banner {
+        padding: 10px 5% 30px;
+    }
+
+    .texto-banner h1{
+        max-width: 100%;
+    }
+
+    .container-acessorios, .container-itens {
+        padding: 20px 5%;
+    }
+}
+
+@media Screen and (max-width: 950px) {
+    :root {
+        --tam-h1: 2.3rem;
+    }
+
+    .texto-banner h1, .conteudo-doacoes h1 {
+        line-height: 40px;
+    }
+
+    .doacoes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .doacoes .imagem-doacoes {
+        display: none;
+    }
+
+    .conteudo-doacoes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conteudo-doacoes h1 {
+        text-align: center;
+    }
+
+    .conteudo-doacoes p {
+        text-align: center;
+        padding: 0 10%;
+    }
+
+    .conteudo-doacoes .btn-doacao {
+        width: 55%;
+    }
+}
+
+@media Screen and (max-width: 890px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .conteudo-doacoes .btn-doacao {
+        width: 90%;
+    }
+
+    footer ul{
+        width: 100%;
+    }
+
+    footer img {
+        display: none;
+    }
+}
+
+@media Screen and (max-width: 820px) {
+    .conteudo-doacoes p {
+        padding: 0 5%;
+    }
+}
+
+@media Screen and (max-width: 720px) {
+    :root {
+        --tam-h1: 2rem;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner .texto-banner {
+        width: 80%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .banner img {
+        display: none;
+    }
+
+    .btn-doacao {
+        width: 100%;
+    }
+
+    .itens img {
+        height: 150px;
+    }
+
+    .itens h1 {
+        font-size: 1rem;
+    }
+
+    .itens p, .conteudo-doacoes p {
+        font-size: 0.875rem;
+    }
+
+
+}
+
+@media Screen and (max-width: 650px) {
+    :root {
+        --tam-h1: 2rem;
+    }
+
+    .conteudo-doacoes p,  .texto-banner p {
+        line-height: 23px;
+    }
+}
